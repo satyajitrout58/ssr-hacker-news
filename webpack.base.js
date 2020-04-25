@@ -1,5 +1,6 @@
 module.exports = {
     //tell webpack to run bable on every file it runs through
+    mode: 'development',
     module: {
         rules: [
             {

@@ -1,9 +1,10 @@
-import exoress from 'express';  
+import express from 'express';  
+import render from './helpers/rendrer'
 
-const app = exoress();
-
+const app = express();
+app.use(express.static('public'));
 app.use('/', (req, res) => {
-    res.send('hiiiiii');
+    res.send(render());
 })
 
 app.listen(3000, ()=>{
