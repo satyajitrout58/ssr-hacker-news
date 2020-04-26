@@ -1,12 +1,16 @@
-import express from 'express';  
+import express from 'express';
 import render from './helpers/rendrer'
 
 const app = express();
 app.use(express.static('public'));
-app.use('/', (req, res) => {
-    res.send(render());
+
+app.get('*', (req, res) => {
+   
+    res.send(render(req));
+    
 })
 
+
 app.listen(3000, ()=>{
-    console.log('app listining to 30000');
-});
+    console.log('listining port 3000');
+})
